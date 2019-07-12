@@ -1,0 +1,44 @@
+[
+    {
+        "seriesname": "Previous Year",
+        "data": [
+            {
+                "link": "j-gotoLinkPage-/about",
+                "value": "10000"
+            },
+            {
+                "link": "j-gotoLinkPage-/about",
+                "value": "11500"
+            },
+            {
+                "link": "j-gotoLinkPage-/about",
+                "value": "12500"
+            },
+            {
+                "link": "j-gotoLinkPage-/about",
+                "value": "15000"
+            }
+        ]
+    },
+    {
+        "seriesname": "Current Year",
+        "data": [
+            {
+                "link": "j-gotoLinkPage-/about",
+                "value": "25400"
+            },
+            {
+                "link": "j-gotoLinkPage-/about",
+                "value": "29800"
+            },
+            {
+                "link": "j-gotoLinkPage-/about",
+                "value": "21800"
+            },
+            {
+                "link": "j-gotoLinkPage-/about",
+                "value": "26800"
+            }
+        ]
+    }
+]
