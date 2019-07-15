@@ -14,7 +14,7 @@
 
 <script>
 import Vue from "vue";
-import { axiosInstance, axiosMethods } from "../axios";
+import { axiosInstance } from "../axios";
 import VueFusionChartsComponent from "vue-fusioncharts/component";
 import FusionCharts from "fusioncharts/fusioncharts";
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
@@ -26,15 +26,11 @@ const vueFusionCharts = VueFusionChartsComponent(
   Charts
 );
 
-Vue.component("fusioncharts", vueFusionCharts);
-
-let interceptor;
-
 export default {
   name: "home",
+  components: { fusioncharts: vueFusionCharts },
   data() {
     const self = this;
-
     return {
       type: "mscolumn2d",
       width: "100%",
@@ -72,7 +68,6 @@ export default {
         ],
         dataset: []
       },
-
       events: {
         dataplotClick(evt, args) {
           window.gotoLinkPage = function(link) {
@@ -83,12 +78,6 @@ export default {
         }
       }
     };
-  },
-  beforeCreate: function() {
-    interceptor = axiosMethods.setButtonInterceptor("submit-form");
-  },
-  beforeDestroy: function() {
-    this.$refs.fc.chartObj.dispose();
   },
   created: function() {
     const self = this;

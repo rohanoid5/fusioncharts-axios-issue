@@ -4,14 +4,18 @@ const axiosInstance = axios.create({
   baseURL: '/api/'
 });
 
+export { axiosInstance };
+
 let axiosMethods = {
   setButtonInterceptor(buttonId) {
-    return axiosInstance.interceptors.request.use(function(config) {
+    axiosInstance.interceptors.request.use(function(config) {
       // Some code removed for brevity
-      console.log(buttonId);
+
       return config;
     });
   }
 };
 
-export { axiosInstance, axiosMethods };
+axiosMethods.setButtonInterceptor('submit-form');
+
+export default axiosMethods;
