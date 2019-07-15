@@ -1,21 +1,17 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: '/api/'
-})
-
-export { axiosInstance }
+  baseURL: '/api/'
+});
 
 let axiosMethods = {
-    setButtonInterceptor(buttonId) {
-        axiosInstance.interceptors.request.use(function (config) {
-            // Some code removed for brevity
+  setButtonInterceptor(buttonId) {
+    return axiosInstance.interceptors.request.use(function(config) {
+      // Some code removed for brevity
+      console.log(buttonId);
+      return config;
+    });
+  }
+};
 
-            return config;
-        });
-    },
-}
-
-axiosMethods.setButtonInterceptor('submit-form')
-
-export default axiosMethods
+export { axiosInstance, axiosMethods };
